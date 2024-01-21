@@ -8,7 +8,7 @@ const { pool } = require("./servicio/server");
 
 const getNoticias = async () => {
   try {
-    let consulta = "SELECT * FROM noticias";
+    let consulta = "SELECT * FROM noticias ORDER BY noticia_id ASC";
     const { rows } = await pool.query(consulta);
 
     return rows;
