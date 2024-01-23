@@ -21,6 +21,7 @@ const Noticias: React.FC = () => {
         <h2>{noticia.titulo}</h2>
         <p>{noticia.resumen}</p>
         <p>{noticia.contenido}</p>
+        <p>{noticia.fecha_publicacion}</p>
       </div>
     ));
   };
