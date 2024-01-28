@@ -1,23 +1,16 @@
-const { pool } = require("./servicio/server");
+const { pool } = require("../service/server");
 
-/**
- *
- * CONSULTA DE NOTICIAS
- *
- */
-
-const getNoticias = async () => {
+const obtenerNoticias = async (req, res) => {
   try {
     let consulta = "SELECT * FROM noticias ORDER BY noticia_id ASC";
     const { rows } = await pool.query(consulta);
-
-    return rows;
+    res.json(rows);
   } catch (error) {
     console.error("ERROR en la query: ", error);
-    throw error;
+    res.status(500).send("Error al obtener las noticias");
   }
 };
 
 module.exports = {
-  getNoticias,
+  obtenerNoticias,
 };
