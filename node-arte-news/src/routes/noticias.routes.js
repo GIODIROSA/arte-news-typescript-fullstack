@@ -1,8 +1,15 @@
 const express = require("express");
-const { obtenerNoticias } = require("../controller/noticias.controller");
+const {
+  getNoticias,
+  getNoticia,
+} = require("../controller/noticias.controller");
 
 const routerNoticia = express.Router();
 
-routerNoticia.get("/", obtenerNoticias);
+routerNoticia.get("/noticias", getNoticias);
+routerNoticia.get("/noticias/:id", getNoticia);
+
+// routerNoticia.post("/", obtenerNoticias);
+
 
 module.exports = routerNoticia;

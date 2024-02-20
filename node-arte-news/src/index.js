@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(logger("dev"));
 
-app.use("/api/noticias", routerNoticias);
+app.use("/api", routerNoticias);
 
 app.use(errorHandler);
 
