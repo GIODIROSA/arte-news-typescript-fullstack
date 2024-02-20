@@ -7,7 +7,7 @@ axios.defaults.timeout = 5000;
 
 export const getNoticias = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/noticias`);
+    const response = await axios.get(`${BASE_URL}/api/noticias`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

@@ -11,7 +11,7 @@ const Noticias: React.FC = () => {
 
   const renderNoticias = () => {
     const { noticias } = noticiasContext || {};
-    
+
     if (!noticias || noticias.length === 0) {
       return <p>No hay noticias disponibles.</p>;
     }
@@ -22,6 +22,16 @@ const Noticias: React.FC = () => {
         <p>{noticia.resumen}</p>
         <p>{noticia.contenido}</p>
         <p>{noticia.fecha_publicacion}</p>
+        <p>{noticia.imagen_url}</p>
+        {/* <img
+          src="http://localhost:3001/uploads/picasso.webp"
+          alt="Descripción alternativa"
+        /> */}
+        <img
+  src={`http://localhost:3001/noticias/uploads/${noticia.imagen_url}`}
+  alt="Descripción alternativa"
+/>
+
       </div>
     ));
   };

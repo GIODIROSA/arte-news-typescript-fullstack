@@ -6,9 +6,12 @@ const routerNoticias = require("./routes/noticias.routes");
 const config = require("./config/config");
 const errorHandler = require("./error/error.handler");
 const app = express();
+const path = require("path");
 
 app.use(cors());
 app.use(logger("dev"));
+
+app.use("/noticias/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
 app.use("/api", routerNoticias);
 
